@@ -1,0 +1,24 @@
+DROP DATABASE IF EXISTS bookdatabase;
+CREATE DATABASE bookdatabase;
+USE bookdatabase;
+CREATE TABLE booktable
+(
+    num INT NOT NULL,
+    id INT NOT NULL PRIMARY KEY,
+    isnew BOOLEAN NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    price FLOAT(4,2) NULL,
+    publisher VARCHAR(100) NOT NULL,
+    pages INT CHECK (pages >= 100),
+    format VARCHAR(50) NULL,
+    dat DATE NULL,
+    circulation INT DEFAULT 5000,
+    theme VARCHAR(100) DEFAULT 'Використання ПК в цілому',
+    category VARCHAR(100) DEFAULT 'Підручники'
+);
+CREATE INDEX idx_name ON booktable (name);
+INSERT INTO booktable (num, id, isnew, name, price, publisher, pages, format, dat, circulation, theme, category)
+VALUES 
+	(2, 5110, No, 'Апаратні засоби мультимедіа. Відеосистема РС', 15.51, 'Видавнича група BHV', 400, 70х100/16, 2000-07-24, 5000, 'Використання ПК в цілому', 'Підручники'),
+    (175, 5217, No, 'Windows МЕ. Найновіші версії програм', 16.57, 'Триумф', 320, 70х100/16, 2000-08-25, 5000, 'Операційні системи', 'Windows 2000'),
+    (225, 8746, Yes, 'Бази даних в інформаційних системах',  , 'Університет "Україна"', 418, 60х84/16, 2018-07-25, 100, 'Програмування', 'SQL');
