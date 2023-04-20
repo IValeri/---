@@ -1,0 +1,5 @@
+SELECT num, id, isnew, name, price, pages FROM booktable;
+
+SELECT * FROM booktable;
+
+SELECT id, name, isnew, pages, price, num FROM booktable;
