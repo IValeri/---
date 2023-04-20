@@ -22,3 +22,10 @@ VALUES
 	(2, 5110, 0, 'Апаратні засоби мультимедіа. Відеосистема РС', 15.51, 'Видавнича група BHV', 400, 70х100/16, 2000-07-24, 5000, 'Використання ПК в цілому', 'Підручники'),
    	(175, 5217, 0, 'Windows МЕ. Найновіші версії програм', 16.57, 'Триумф', 320, 70х100/16, 2000-08-25, 5000, 'Операційні системи', 'Windows 2000'),
     	(225, 8746, 1, 'Бази даних в інформаційних системах',  , 'Університет "Україна"', 418, 60х84/16, 2018-07-25, 100, 'Програмування', 'SQL');
+	
+ALTER TABLE booktable ADD author VARCHAR(15);
+ALTER TABLE booktable ALTER COLUMN author VARCHAR(20);
+ALTER TABLE booktable DROP COLUMN author;
+DROP INDEX IF EXISTS idx_name;
+CREATE UNIQUE INDEX idx_name ON booktable (name DESC);
+DROP INDEX IF EXISTS idx_name;
