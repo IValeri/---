@@ -29,6 +29,8 @@ ALTER TABLE booktable
 MODIFY COLUMN author VARCHAR(20);
 ALTER TABLE booktable
 DROP COLUMN author;
+ALTER TABLE booktable
 DROP INDEX IF EXISTS idx_name;
 CREATE UNIQUE INDEX idx_name ON booktable (name DESC);
-DROP INDEX IF EXISTS booktable.idx_name;
+ALTER TABLE booktable
+DROP INDEX idx_name;
