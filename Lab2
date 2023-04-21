@@ -14,16 +14,19 @@ SELECT * FROM booktable WHERE isnew LIKE '1' AND prise NOT BETWEEN 20 AND 30;
 
 SELECT * FROM booktable WHERE isnew LIKE '1' AND prise BETWEEN 20 AND 30;
 
-SELECT * FROM books WHERE YEAR(dat) = 2000 AND MONTH(dat) IN (12, 1, 2);
+SELECT * FROM booktable WHERE YEAR(dat) = 2000 AND MONTH(dat) IN (12, 1, 2);
 
-SELECT * FROM books WHERE id IN (5110, 5141, 4985, 4241);
+SELECT * FROM booktable WHERE id IN (5110, 5141, 4985, 4241);
 
-SELECT * FROM books WHERE YEAR(dat) IN (1999, 2001, 2003, 2005);
+SELECT * FROM booktable WHERE YEAR(dat) IN (1999, 2001, 2003, 2005);
 
-SELECT * FROM books WHERE name LIKE '[А-К]%';
+SELECT * FROM booktable WHERE name LIKE '[А-К]%';
 
-SELECT * FROM books WHERE name LIKE 'Ап%' AND YEAR(dat) = 2000 AND prise < 20;
+SELECT * FROM booktable WHERE name LIKE 'Ап%' AND YEAR(dat) = 2000 AND prise < 20;
 
-SELECT * FROM books WHERE name LIKE 'Ап%е' AND YEAR(dat) = 2000 AND MONTH(dat) IN (1, 2, 3, 4, 5, 6);
+SELECT * FROM booktable WHERE name LIKE 'Ап%е' AND YEAR(dat) = 2000 AND MONTH(dat) IN (1, 2, 3, 4, 5, 6);
 
-SELECT * FROM books WHERE name LIKE '%Microsoft%' AND name NOT LIKE '%Windows%';
+SELECT * FROM booktable WHERE name LIKE '%Microsoft%' AND name NOT LIKE '%Windows%';
+
+SELECT * FROM booktable WHERE name LIKE '%[0-9]%';
+
