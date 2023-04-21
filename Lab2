@@ -3,3 +3,27 @@ SELECT num, id, isnew, name, price, pages FROM booktable;
 SELECT * FROM booktable;
 
 SELECT id, name, isnew, pages, price, num FROM booktable;
+
+SELECT * FROM booktable LIMIT 10;
+
+SELECT DISTINCT id FROM booktable;
+
+SELECT * FROM booktable WHERE isnew LIKE '1';
+
+SELECT * FROM booktable WHERE isnew LIKE '1' AND prise <= 20 OR prise >= 30;
+
+SELECT * FROM booktable WHERE isnew LIKE '1' AND prise >= 20 AND prise <= 30;
+
+SELECT * FROM books WHERE YEAR(dat) = 2000 AND MONTH(dat) IN (12, 1, 2);
+
+SELECT * FROM books WHERE id IN (5110, 5141, 4985, 4241);
+
+SELECT * FROM books WHERE YEAR(dat) IN (1999, 2001, 2003, 2005);
+
+SELECT * FROM books WHERE name LIKE '[А-К]%';
+
+SELECT * FROM books WHERE name LIKE 'Ап%' AND YEAR(dat) = 2000 AND prise < 20;
+
+SELECT * FROM books WHERE name LIKE 'Ап%е' AND YEAR(dat) = 2000 AND MONTH(dat) IN (1, 2, 3, 4, 5, 6);
+
+SELECT * FROM books WHERE name LIKE '%Microsoft%' AND name NOT LIKE '%Windows%';
