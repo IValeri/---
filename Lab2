@@ -10,9 +10,9 @@ SELECT DISTINCT id FROM booktable;
 
 SELECT * FROM booktable WHERE isnew LIKE '1';
 
-SELECT * FROM booktable WHERE isnew LIKE '1' AND prise <= 20 OR prise >= 30;
+SELECT * FROM booktable WHERE isnew LIKE '1' AND prise NOT BETWEEN 20 AND 30;
 
-SELECT * FROM booktable WHERE isnew LIKE '1' AND prise >= 20 AND prise <= 30;
+SELECT * FROM booktable WHERE isnew LIKE '1' AND prise BETWEEN 20 AND 30;
 
 SELECT * FROM books WHERE YEAR(dat) = 2000 AND MONTH(dat) IN (12, 1, 2);
 
