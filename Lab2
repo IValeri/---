@@ -30,3 +30,6 @@ SELECT * FROM booktable WHERE name LIKE '%Microsoft%' AND name NOT LIKE '%Window
 
 SELECT * FROM booktable WHERE name LIKE '%[0-9]%';
 
+SELECT * FROM booktable WHERE name LIKE '%[0-9]%[0-9]%[0-9]%';
+
+SELECT * FROM booktable WHERE name REGEXP '[0-9]{5}'
