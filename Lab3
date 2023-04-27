@@ -1,0 +1,7 @@
+SELECT * FROM booktable WHERE price = 0 OR price IS NULL;
+
+SELECT * FROM booktable WHERE price IS NOT NULL AND circulation IS NULL;
+
+SELECT * FROM booktable WHERE dat IS NULL;
+
+SELECT * FROM booktable WHERE dat >= DATE_SUB(NOW(), INTERVAL 1 YEAR);
