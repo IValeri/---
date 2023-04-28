@@ -27,3 +27,7 @@ SELECT name, dat, DATE_FORMAT(dat, '%d/%m/%Y') FROM booktable;
 SELECT id, price, ROUND(price*27, 2), ROUND(price*0.85, 2) FROM booktable;
 
 SELECT code, price, FLOOR(price * 27.25), ROUND(price, 0) FROM booktable;
+
+INSERT INTO booktable (num, id, isnew, name, price, publisher, pages, format, dat, circulation, theme, category)
+VALUES 
+	(2, 5110, 0, 'Апаратні засоби мультимедіа. Відеосистема РС', 15.51, 'Видавнича група BHV', 400, '70х100/16' , 2000-07-24, 5000, 'Використання ПК в цілому', 'Підручники')
