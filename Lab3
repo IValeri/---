@@ -5,3 +5,21 @@ SELECT * FROM booktable WHERE price IS NOT NULL AND circulation IS NULL;
 SELECT * FROM booktable WHERE dat IS NULL;
 
 SELECT * FROM booktable WHERE dat >= DATE_SUB(NOW(), INTERVAL 1 YEAR);
+
+SELECT * FROM booktable WHERE isnew = 1 ORDER BY price ASC;
+
+SELECT * FROM booktable WHERE pages BETWEEN 300 AND 400 ORDER BY name DESC;
+
+SELECT * FROM booktable WHERE price BETWEEN 20 AND 40 ORDER BY dat DESC;
+
+SELECT * FROM booktable ORDER BY name ASC, price DESC;
+
+SELECT * FROM booktable WHERE price / pages < 0.1;
+
+SELECT LENGTH(name), UPPER(LEFT(name, 20)) FROM booktable;
+
+SELECT CONCAT(UPPER(SUBSTRING(name, 1, 10)), '...', UPPER(SUBSTRING(name, -10))) FROM booktable;
+
+SELECT name, dat, DAY(dat), MONTH(dat), YEAR(dat) FROM booktable;
+
+SELECT name, dat, DATE_FORMAT(dat, '%d/%m/%Y') FROM booktable;
