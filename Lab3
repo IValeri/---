@@ -23,3 +23,7 @@ SELECT CONCAT(UPPER(SUBSTRING(name, 1, 10)), '...', UPPER(SUBSTRING(name, -10)))
 SELECT name, dat, DAY(dat), MONTH(dat), YEAR(dat) FROM booktable;
 
 SELECT name, dat, DATE_FORMAT(dat, '%d/%m/%Y') FROM booktable;
+
+SELECT id, price, ROUND(price*27, 2), ROUND(price*0.85, 2) FROM booktable;
+
+SELECT code, price, FLOOR(price * 27.25), ROUND(price, 0) FROM booktable;
