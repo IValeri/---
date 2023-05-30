@@ -34,8 +34,8 @@ VALUES
 INSERT INTO booktable (num, id, isnew, name, price, publisher, pages, format, dat, circulation, theme, category)
 VALUES
 	(226, 2154, Yes, 'Сервер на основі операційної системи FreeBSD 6.1',  NULL, 'Університет "Україна"', 216, '60х84/16', 2015-11-03, 500, 'Програмування', 'Інші операційні системи');
-DELETE FROM books WHERE publication_date < '1990-01-01';
-UPDATE books
+DELETE FROM booktable WHERE publication_date < '1990-01-01';
+UPDATE booktable
 	SET publication_date = CURDATE() WHERE publication_date IS NULL;
-UPDATE books
+UPDATE booktable
 	SET isnew = 1 WHERE publication_date > '2005-01-01';
