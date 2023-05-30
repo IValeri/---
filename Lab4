@@ -1,0 +1,11 @@
+SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable;
+
+SELECT COUNT(*) AS books_with_price FROM booktable WHERE price IS NOT NULL;
+
+SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable WHERE isnew = 1;
+
+SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable GROUP BY YEAR(dat) ORDER BY YEAR(dat) ASC;
+
+SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable GROUP BY YEAR(dat) WHERE  price < 10 OR price > 20 ORDER BY YEAR(dat) ASC;
+
+SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable GROUP BY YEAR(dat) ORDER BY SC;
