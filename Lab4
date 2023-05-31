@@ -27,3 +27,16 @@ SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average
 
 SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable GROUP BY YEAR(dat), MONTH(dat) ORDER BY YEAR(dat) DESC, MONTH(dat) ASC;
 
+SELECT SUM(price) AS total_price, SUM(price * exchange_rate) AS total_price_uah, SUM(price * exchange_rate * euro_to_uah_exchange_rate) AS total_price_euro FROM booktable WHERE isnew = 1 JOIN currency_rates ON currency_rates.currency = 'USD';
+SELECT SUM(price) AS total_price, SUM(price * exchange_rate) AS total_price_uah, SUM(price * exchange_rate * euro_to_uah_exchange_rate) AS total_price_euro FROM booktable WHERE isnew = 0 JOIN currency_rates ON currency_rates.currency = 'USD';
+
+SELECT ROUND(SUM(price) AS total_price), ROUND(SUM(price * exchange_rate)) AS total_price_uah, ROUND(SUM(price * exchange_rate * euro_to_uah_exchange_rate)) AS total_price_euro FROM booktable WHERE isnew = 1 JOIN currency_rates ON currency_rates.currency = 'USD';
+SELECT ROUND(SUM(price) AS total_price), ROUND(SUM(price * exchange_rate)) AS total_price_uah, ROUND(SUM(price * exchange_rate * euro_to_uah_exchange_rate)) AS total_price_euro FROM booktable WHERE isnew = 0 JOIN currency_rates ON currency_rates.currency = 'USD';
+
+SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable GROUP BY publisher;
+
+SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable WHERE publisher IN ('Видавнича група BHV', 'Триумф') GROUP BY theme, publisher;
+
+SELECT COUNT(*) AS total_books, SUM(price) AS total_price, AVG(price) AS average_price, MIN(price) AS min_price, MAX(price) AS max_price FROM booktable WHERE publisher IN ('Видавнича група BHV', 'Триумф') AND theme IN ('Операційні системи', 'Використання ПК в цілому', 'Програмування') AND category IN ('Підручники', 'Windows 2000', 'SQL') GROUP BY category, theme, publisher;
+
+SELECT DISTINCT publisher FROM booktable WHERE CEIL(price / pages) > 10;
