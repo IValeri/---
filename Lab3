@@ -30,10 +30,10 @@ SELECT code, price, FLOOR(price * 27.25), ROUND(price, 0) FROM booktable;
 
 INSERT INTO booktable (num, id, isnew, name, price, publisher, pages, format, dat, circulation, theme, category)
 VALUES 
-	(2, 5110, 0, 'Апаратні засоби мультимедіа. Відеосистема РС', 15.51, 'Видавнича група BHV', 400, '70х100/16' , 2000-07-24, 5000, 'Використання ПК в цілому', 'Підручники');
+	(330, 5432, 0, 'Апаратні засоби', 15.48, 'Видавнича група BHV', 500, '70х100/16' , 2000-05-11, 5000, 'Використання ПК в цілому', 'Підручники');
 INSERT INTO booktable (num, id, isnew, name, price, publisher, pages, format, dat, circulation, theme, category)
 VALUES
-	(226, 2154, Yes, 'Сервер на основі операційної системи FreeBSD 6.1',  NULL, 'Університет "Україна"', 216, '60х84/16', 2015-11-03, 500, 'Програмування', 'Інші операційні системи');
+	(234, 2344, 1, 'Сервер',  NULL, 'Університет "Україна', 290, '60х84/16', 2015-08-03, 500, 'Програмування', 'Інші операційні системи');
 DELETE FROM booktable WHERE publication_date < '1990-01-01';
 UPDATE booktable
 	SET publication_date = CURDATE() WHERE publication_date IS NULL;
