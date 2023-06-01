@@ -1,0 +1,17 @@
+DELIMITER //
+
+CREATE FUNCTION get_pages(publisherName VARCHAR(100))
+  RETURNS INT
+  BEGIN
+    DECLARE pageCount INT;
+    
+    SELECT SUM(pages) INTO pageCount
+    FROM booktable
+    WHERE publisher = publisherName;
+    
+    RETURN pageCount;
+  END //
+
+DELIMITER ;
+
+SELECT get_pages('Видавнича група BHV') AS totalPageCount;
