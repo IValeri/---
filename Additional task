@@ -15,3 +15,6 @@ CREATE FUNCTION get_pages(publisherName VARCHAR(100))
 DELIMITER ;
 
 SELECT get_pages('Видавнича група BHV') AS totalPageCount;
+
+SELECT bt.* FROM `booktable` as bt JOIN (
+SELECT publisher, avg(price / pages) as price_per_page FROM `booktable` GROUP BY publisher ORDER BY price_per_page DESC LIMIT 1) as ppp ON bt.publisher = ppp.publisher;
